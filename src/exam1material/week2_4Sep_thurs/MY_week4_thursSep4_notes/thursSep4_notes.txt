@@ -21,7 +21,7 @@ Example: another parse tree
 
 p ∧ q ∧ r → ¬p ∨ q → r
 
-
+top-level operator: This implies -> that it is on the left.
 
 Example: another circuit
 
@@ -57,13 +57,15 @@ Example:
 z != 7 && str.contains(sub)
 
 
+
 --> what are the propositional atoms?
 
-
+p: z == 7 (either true or not)
+q: str.contains(sub)
 
 --> express in propositional logic
 
-
+¬p ∧ q
 
 ////////////////////////////////////////
 
@@ -74,11 +76,14 @@ You can't enroll for the course if you haven't taken the prerequisite.
 
 --> what are the propositional atoms?
 
-
+p: You can enroll for the course
+q: You have taken the preresquisite.
 
 --> translate to propositional logic:
 
-really saying:
+¬p → ¬q  
+
+really saying: If you haven't taken the prerequisite, then you can't enroll for the course.
 
 
 
@@ -86,9 +91,9 @@ really saying:
 
 What is the *contrapositive* of our statement?
 
+p → q  
 
-
-
+if you have enrolled in the course, then you have taken the prerequisite.
 
 //////////////////////////////////////////
 ∧ ∨ ¬ → 
@@ -104,9 +109,16 @@ if (x <= 2 || y >= 0) {
 
 Propositional atoms?
 
+p: x <= 2
+q: y >= 0
+r: z == 17
+s: answer == 25
 
 Translation? (if ... then ...)
 
+if (both conditions were true) then answer would be 25.
+
+(p ∨ q) ∧ ¬r → s    
 
 //////////////////////////////////
 
@@ -118,11 +130,11 @@ q: I can drive a car
 
 1) If I am at least 16 years old, then I can drive a car.
 
-
+p → q 
 
 2) I'm not at least 16 years old or I can drive a car.
 
-
+¬p ∨ q  
 
 --> are they saying the same thing?
 
